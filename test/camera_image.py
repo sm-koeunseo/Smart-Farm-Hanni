@@ -1,3 +1,4 @@
+# camera_image.py : capture test
 from picamera import PiCamera
 from time import sleep
 
