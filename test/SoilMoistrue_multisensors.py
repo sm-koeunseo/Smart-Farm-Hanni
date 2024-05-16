@@ -2,8 +2,7 @@ import RPi.GPIO as GPIO
 import spidev
 import time
 
-# unit : seconds
-delay = 10
+delay = 1 
 
 # Open Spi Bus
 # SPI bus and device
@@ -29,9 +28,14 @@ try:
   while True:
     val = readChannel(0)
     if (val != 0) : # filtering for meaningless num
-      print(val, "/", convertPercent(val),"%")
+      print("1 : ", val, "/", convertPercent(val),"%")
     else:
-      print("no data")
+      print("1 : no data")
+    val = readChannel(1)
+    if (val != 0) : # filtering for meaningless num
+      print("2 : ", val, "/", convertPercent(val),"%")
+    else:
+      print("2 : no data")
     time.sleep(delay)
 except KeyboardInterrupt:
   spi.close()
