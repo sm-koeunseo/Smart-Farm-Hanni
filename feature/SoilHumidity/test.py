@@ -43,23 +43,33 @@ try:
     for i in range(3):
         val = readChannel(i)
         if (val != 0):
-            humi_og.append[convertSoilPercent(val)]
-    humi = statistics.mean(val)
+            humi_og.append(convertSoilPercent(val))
+            print(i, ": ", val, end=", ")
 
-    if humi < 25:
-        GPIO.output(motor1, GPIO.HIGH)
-        GPIO.output(motor2, GPIO.LOW)
-        time.sleep(60 * 2)
-        GPIO.output(motor1, GPIO.LOW)
-        GPIO.output(motor2, GPIO.LOW)
-        time.sleep(60 * 8)
+    print(len(humi_og))
+    if (len(humi_og) > 2):
+        humi = statistics.mean(humi_og)
+        print("humi avg : ", humi)
 
-        # check the water bucket
-        if readChannel(3) < 550:
-            print("water lack!!")
-            # push message
+        if humi < 40 & humi > 20:   # normal value
+            if humi < 25:           # soil water lack
+                GPIO.output(motor1, GPIO.HIGH)
+                GPIO.output(motor2, GPIO.LOW)
+                time.sleep(5)
+                GPIO.output(motor1, GPIO.LOW)
+                GPIO.output(motor2, GPIO.LOW)
+                time.sleep(5)
+
+                # check the water bucket
+                if readChannel(3) < 550:
+                    print("water lack!!")
+                    # push message
+            else:
+                time.sleep(5)
+        else:
+           print()
     else:
-        time.sleep(delay)
+       continue
 except KeyboardInterrupt:
   spi.close()
   print("Keyboard Interrupt!!!!")
