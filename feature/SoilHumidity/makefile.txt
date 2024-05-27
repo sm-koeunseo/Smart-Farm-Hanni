@@ -1,0 +1,3 @@
+3 -> repeat in 3 seconds. remove and reinstall.
+3_2 -> repeat in 3 seconds. 
+3_3 -> repeat in 3 seconds. water.
