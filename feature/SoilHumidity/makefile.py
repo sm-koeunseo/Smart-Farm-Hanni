@@ -39,18 +39,18 @@ try:
     row_data = []
 
     for i in range(3):
-        val = readChannel(i)
-        if val != 0:
-            percent_val = convertSoilPercent(val)
-            row_data.extend([val, percent_val])
-            print(f"Channel {i}: Raw Value = {val}, Converted Value = {percent_val}")
-        else:
-            row_data.extend(["no_data", "no_data"])
-            print(f"Channel {i}: no data")
+      val = readChannel(i)
+      if val != 0:
+          percent_val = convertSoilPercent(val)
+          row_data.extend([val, percent_val])
+          print(f"Channel {i}: Raw Value = {val}, Converted Value = {percent_val}")
+      else:
+          row_data.extend(["no_data", "no_data"])
+          print(f"Channel {i}: no data")
 
-        with open(csv_file, mode='a', newline='') as file:
-            writer = csv.writer(file)
-            writer.writerow(row_data)
+    with open(csv_file, mode='a', newline='') as file:
+        writer = csv.writer(file)
+        writer.writerow(row_data)
 
     time.sleep(3)
 except KeyboardInterrupt:
