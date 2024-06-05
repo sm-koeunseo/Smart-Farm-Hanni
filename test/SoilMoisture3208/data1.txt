@@ -1,0 +1,323 @@
+2024/06/05 15:09:54
+MCP3208: Reading=2044   Voltage=1.646777
+Water%: 75.0
+
+2024/06/05 15:09:56
+MCP3208: Reading=2030   Voltage=1.635498
+Water%: 75.5
+
+2024/06/05 15:09:58
+MCP3208: Reading=2045   Voltage=1.647583
+Water%: 75.0
+
+2024/06/05 15:10:00
+MCP3208: Reading=2015   Voltage=1.623413
+Water%: 76.1
+
+2024/06/05 15:10:02
+MCP3208: Reading=2047   Voltage=1.649194
+Water%: 74.9
+
+2024/06/05 15:10:04
+MCP3208: Reading=2018   Voltage=1.625830
+Water%: 75.9
+
+2024/06/05 15:10:06
+MCP3208: Reading=2008   Voltage=1.617773
+Water%: 76.3
+
+2024/06/05 15:10:08
+MCP3208: Reading=2010   Voltage=1.619385
+Water%: 76.2
+
+2024/06/05 15:10:10
+MCP3208: Reading=2031   Voltage=1.636304
+Water%: 75.5
+
+2024/06/05 15:10:12
+MCP3208: Reading=1934   Voltage=1.558154
+Water%: 79.0
+
+2024/06/05 15:10:14
+MCP3208: Reading=590    Voltage=0.475342
+Water%: 128.2
+
+2024/06/05 15:10:16
+MCP3208: Reading=116    Voltage=0.093457
+Water%: 145.5
+
+2024/06/05 15:10:18
+MCP3208: Reading=80     Voltage=0.064453
+Water%: 146.8
+
+2024/06/05 15:10:20
+MCP3208: Reading=28     Voltage=0.022559
+Water%: 148.7
+
+2024/06/05 15:10:22
+MCP3208: Reading=82     Voltage=0.066064
+Water%: 146.7
+
+2024/06/05 15:10:24
+MCP3208: Reading=74     Voltage=0.059619
+Water%: 147.0
+
+2024/06/05 15:10:26
+MCP3208: Reading=85     Voltage=0.068481
+Water%: 146.6
+
+2024/06/05 15:10:28
+MCP3208: Reading=1555   Voltage=1.252808
+Water%: 92.9
+
+2024/06/05 15:10:30
+MCP3208: Reading=2068   Voltage=1.666113
+Water%: 74.1
+
+2024/06/05 15:10:32
+MCP3208: Reading=2047   Voltage=1.649194
+Water%: 74.9
+
+2024/06/05 15:10:34
+MCP3208: Reading=2042   Voltage=1.645166
+Water%: 75.1
+
+2024/06/05 15:10:36
+MCP3208: Reading=2069   Voltage=1.666919
+Water%: 74.1
+
+2024/06/05 15:10:38
+MCP3208: Reading=2020   Voltage=1.627441
+Water%: 75.9
+
+2024/06/05 15:10:40
+MCP3208: Reading=1988   Voltage=1.601660
+Water%: 77.0
+
+2024/06/05 15:10:42
+MCP3208: Reading=1999   Voltage=1.610522
+Water%: 76.6
+
+2024/06/05 15:10:44
+MCP3208: Reading=1991   Voltage=1.604077
+Water%: 76.9
+
+2024/06/05 15:10:46
+MCP3208: Reading=2035   Voltage=1.639526
+Water%: 75.3
+
+2024/06/05 15:10:48
+MCP3208: Reading=2015   Voltage=1.623413
+Water%: 76.1
+
+2024/06/05 15:10:50
+MCP3208: Reading=2056   Voltage=1.656445
+Water%: 74.6
+
+2024/06/05 15:10:52
+MCP3208: Reading=2059   Voltage=1.658862
+Water%: 74.4
+
+2024/06/05 15:10:54
+MCP3208: Reading=2008   Voltage=1.617773
+Water%: 76.3
+
+2024/06/05 15:10:56
+MCP3208: Reading=2029   Voltage=1.634692
+Water%: 75.5
+
+2024/06/05 15:10:58
+MCP3208: Reading=2026   Voltage=1.632275
+Water%: 75.6
+
+2024/06/05 15:11:00
+MCP3208: Reading=2012   Voltage=1.620996
+Water%: 76.2
+
+2024/06/05 15:11:02
+MCP3208: Reading=1762   Voltage=1.419580
+Water%: 85.3
+
+2024/06/05 15:11:04
+MCP3208: Reading=1557   Voltage=1.254419
+Water%: 92.8
+
+2024/06/05 15:11:06
+MCP3208: Reading=1186   Voltage=0.955518
+Water%: 106.4
+
+2024/06/05 15:11:08
+MCP3208: Reading=717    Voltage=0.577661
+Water%: 123.5
+
+2024/06/05 15:11:10
+MCP3208: Reading=209    Voltage=0.168384
+Water%: 142.1
+
+2024/06/05 15:11:12
+MCP3208: Reading=121    Voltage=0.097485
+Water%: 145.3
+
+2024/06/05 15:11:14
+MCP3208: Reading=19     Voltage=0.015308
+Water%: 149.0
+
+2024/06/05 15:11:16
+MCP3208: Reading=94     Voltage=0.075732
+Water%: 146.3
+
+2024/06/05 15:11:18
+MCP3208: Reading=100    Voltage=0.080566
+Water%: 146.1
+
+2024/06/05 15:11:20
+MCP3208: Reading=87     Voltage=0.070093
+Water%: 146.5
+
+2024/06/05 15:11:22
+MCP3208: Reading=94     Voltage=0.075732
+Water%: 146.3
+
+2024/06/05 15:11:24
+MCP3208: Reading=91     Voltage=0.073315
+Water%: 146.4
+
+2024/06/05 15:11:26
+MCP3208: Reading=107    Voltage=0.086206
+Water%: 145.8
+
+2024/06/05 15:11:28
+MCP3208: Reading=69     Voltage=0.055591
+Water%: 147.2
+
+2024/06/05 15:11:30
+MCP3208: Reading=136    Voltage=0.109570
+Water%: 144.8
+
+2024/06/05 15:11:32
+MCP3208: Reading=129    Voltage=0.103931
+Water%: 145.0
+
+2024/06/05 15:11:34
+MCP3208: Reading=68     Voltage=0.054785
+Water%: 147.2
+
+2024/06/05 15:11:36
+MCP3208: Reading=142    Voltage=0.114404
+Water%: 144.5
+
+2024/06/05 15:11:38
+MCP3208: Reading=153    Voltage=0.123267
+Water%: 144.1
+
+2024/06/05 15:11:40
+MCP3208: Reading=82     Voltage=0.066064
+Water%: 146.7
+
+2024/06/05 15:11:42
+MCP3208: Reading=152    Voltage=0.122461
+Water%: 144.2
+
+2024/06/05 15:11:44
+MCP3208: Reading=59     Voltage=0.047534
+Water%: 147.6
+
+2024/06/05 15:11:46
+MCP3208: Reading=134    Voltage=0.107959
+Water%: 144.8
+
+2024/06/05 15:11:48
+MCP3208: Reading=91     Voltage=0.073315
+Water%: 146.4
+
+2024/06/05 15:11:50
+MCP3208: Reading=113    Voltage=0.091040
+Water%: 145.6
+
+2024/06/05 15:11:52
+MCP3208: Reading=84     Voltage=0.067676
+Water%: 146.7
+
+2024/06/05 15:11:54
+MCP3208: Reading=150    Voltage=0.120850
+Water%: 144.2
+
+2024/06/05 15:11:56
+MCP3208: Reading=1024   Voltage=0.825000
+Water%: 112.3
+
+2024/06/05 15:11:58
+MCP3208: Reading=1979   Voltage=1.594409
+Water%: 77.4
+
+2024/06/05 15:12:00
+MCP3208: Reading=2029   Voltage=1.634692
+Water%: 75.5
+
+2024/06/05 15:12:02
+MCP3208: Reading=2061   Voltage=1.660474
+Water%: 74.4
+
+2024/06/05 15:12:04
+MCP3208: Reading=1995   Voltage=1.607300
+Water%: 76.8
+
+2024/06/05 15:12:06
+MCP3208: Reading=2024   Voltage=1.630664
+Water%: 75.7
+
+2024/06/05 15:12:08
+MCP3208: Reading=2073   Voltage=1.670142
+Water%: 73.9
+
+2024/06/05 15:12:10
+MCP3208: Reading=1997   Voltage=1.608911
+Water%: 76.7
+
+2024/06/05 15:12:12
+MCP3208: Reading=2081   Voltage=1.676587
+Water%: 73.6
+
+2024/06/05 15:12:14
+MCP3208: Reading=2015   Voltage=1.623413
+Water%: 76.1
+
+2024/06/05 15:12:16
+MCP3208: Reading=2064   Voltage=1.662891
+Water%: 74.3
+
+2024/06/05 15:12:18
+MCP3208: Reading=809    Voltage=0.651782
+Water%: 120.1
+
+2024/06/05 15:12:20
+MCP3208: Reading=87     Voltage=0.070093
+Water%: 146.5
+
+2024/06/05 15:12:22
+MCP3208: Reading=86     Voltage=0.069287
+Water%: 146.6
+
+2024/06/05 15:12:24
+MCP3208: Reading=63     Voltage=0.050757
+Water%: 147.4
+
+2024/06/05 15:12:26
+MCP3208: Reading=77     Voltage=0.062036
+Water%: 146.9
+
+2024/06/05 15:12:28
+MCP3208: Reading=4      Voltage=0.003223
+Water%: 149.6
+
+2024/06/05 15:12:30
+MCP3208: Reading=1415   Voltage=1.140015
+Water%: 98.0
+
+2024/06/05 15:12:32
+MCP3208: Reading=2067   Voltage=1.665308
+Water%: 74.1
+
+2024/06/05 15:12:34
+MCP3208: Reading=2067   Voltage=1.665308
+Water%: 74.1
