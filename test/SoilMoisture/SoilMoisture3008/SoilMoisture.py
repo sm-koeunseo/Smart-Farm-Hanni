@@ -3,7 +3,7 @@ import spidev
 import time
 
 # unit : seconds
-delay = 10
+delay = 2
 
 # Open Spi Bus
 # SPI bus and device
@@ -25,11 +25,15 @@ def readChannel(channel):
 def convertPercent(data):
   return 100.0-round(((data*100)/float(1023)),1)
 
+def map(x, in_min=1023, in_max=0, out_min=0, out_max=100):
+    out_val = (((x - in_min) * (out_max - out_min)) / (in_max - in_min)) + out_min
+    return out_val
+
 try:
   while True:
-    val = readChannel(0)
+    val = readChannel(1)
     if (val != 0) : # filtering for meaningless num
-      print(val, "/", convertPercent(val),"%")
+      print(val, "/", map(val),"%")
     else:
       print("no data")
     time.sleep(delay)
