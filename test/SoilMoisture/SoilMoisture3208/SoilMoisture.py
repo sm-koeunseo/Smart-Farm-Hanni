@@ -26,17 +26,23 @@ def readChannel2(channel):
   data = ((val[1]&15)<<8)|val[2]
   return data
 
+def readChannel3(channel):
+  buff=spi.xfer2([1,(8+channel)<<4,0])
+  adcValue=((buff[1]&3)<<8)+buff[2]
+  return adcValue
+
 # 0~1023 value? ???. 1023? ???? min?
 def convertPercent(data):
   return 100.0-round(((data*100)/float(1023)),1)
 
-def map(x, in_min=4095, in_max=0, out_min=0, out_max=100):
+# 4095
+def map(x, in_min=1023, in_max=0, out_min=0, out_max=100):
     out_val = (((x - in_min) * (out_max - out_min)) / (in_max - in_min)) + out_min
     return out_val
 
 try:
   while True:
-    val = readChannel2(1)
+    val = readChannel3(1)
     if (val != 0) : # filtering for meaningless num
       print(val, "/", map(val),"%")
     else:
