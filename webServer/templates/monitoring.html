@@ -1,0 +1,51 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="monitoring-page">
+        <h2>My Smart Farm Monitoring</h2>
+        <div class="monitoring">
+            <div class="monitoring-item">
+                <h3>Temperature</h3>
+                <button onclick="showDetails('temperature')">View Temperature</button>
+                <div id="temperature-details" class="details" style="display:none;">
+                    <p>Current: 25°C</p>
+                    <img src="url/to/temp-graph.png" alt="Temperature Graph">
+                </div>
+            </div>
+            <div class="monitoring-item">
+                <h3>Humidity</h3>
+                <button onclick="showDetails('humidity')">View Humidity</button>
+                <div id="humidity-details" class="details" style="display:none;">
+                    <p>Current: 60%</p>
+                    <img src="url/to/humidity-graph.png" alt="Humidity Graph">
+                </div>
+            </div>
+            <div class="monitoring-item">
+                <h3>Water</h3>
+                <button onclick="showDetails('water')">View Water</button>
+                <div id="water-details" class="details" style="display:none;">
+                    <button>Water On/Off</button>
+                    <img src="url/to/soil-moisture-graph.png" alt="Soil Moisture Graph">
+                </div>
+            </div>
+            <div class="monitoring-item">
+                <h3>Ventilation</h3>
+                <button onclick="showDetails('ventilation')">View Ventilation</button>
+                <div id="ventilation-details" class="details" style="display:none;">
+                    <button>Vent On/Off</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+<script>
+function showDetails(id) {
+    var details = document.getElementById(id + '-details');
+    if (details.style.display === 'none') {
+        details.style.display = 'block';
+    } else {
+        details.style.display = 'none';
+    }
+}
+</script>
