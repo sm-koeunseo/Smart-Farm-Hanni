@@ -3,6 +3,7 @@ import spidev
 import time
 import statistics
 
+# pin number
 motorA1R = 17
 motorA1B = 18
 motorA2R = 22
@@ -18,6 +19,10 @@ pump1B = 6
 pump2R = 13
 pump2B = 19
 
+guage = 26
+
+outlet = 25
+
 # GPIO Settings
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
@@ -30,6 +35,11 @@ GPIO.setup(pump2R, GPIO.OUT)
 GPIO.output(pump2R, GPIO.LOW)
 GPIO.setup(pump2B, GPIO.OUT)
 GPIO.output(pump2B, GPIO.LOW)
+
+GPIO.setup(guage, GPIO.IN)
+
+GPIO.setup(outlet, GPIO.OUT)
+GPIO.output(outlet, GPIO.LOW)
 
 # Open Spi Bus
 # SPI bus and device
@@ -52,21 +62,39 @@ def readChannel2(channel):
   data = ((val[1]&15) << 8) + val[2]
   return data
 
+def fMotor():
+  GPIO.output(pump1R, GPIO.HIGH)
+  GPIO.output(pump1B, GPIO.LOW)
+  GPIO.output(pump2R, GPIO.HIGH)
+  GPIO.output(pump2B, GPIO.LOW)
+  time.sleep(1)
+  GPIO.output(pump1R, GPIO.LOW)
+  GPIO.output(pump1B, GPIO.LOW)
+  GPIO.output(pump2R, GPIO.LOW)
+  GPIO.output(pump2B, GPIO.LOW)
+  time.sleep(1)
+
+def fMoisture():
+  print("val1:", readChannel1(1))
+  print("val2:", readChannel1(2))
+  print("val3:", readChannel1(3))
+
+def fGuage():
+  print(GPIO.input(guage))
+
+def fLED():
+  GPIO.output(outlet,True)
+  time.sleep(5)
+  GPIO.output(outlet,False)
+
 try:
-    while True:
-        print("val1:", readChannel1(1))
-        print("val2:", readChannel1(2))
-        print("val3:", readChannel1(3))
-        time.sleep(2)
-        '''GPIO.output(pump1R, GPIO.HIGH)
-        GPIO.output(pump1B, GPIO.LOW)
-        GPIO.output(pump2R, GPIO.HIGH)
-        GPIO.output(pump2B, GPIO.LOW)
-        time.sleep(1)
-        GPIO.output(pump1R, GPIO.LOW)
-        GPIO.output(pump1B, GPIO.LOW)
-        GPIO.output(pump2R, GPIO.LOW)
-        GPIO.output(pump2B, GPIO.LOW)
-        time.sleep(1)'''
+  # fMotor()
+  # time.sleep(1)
+  # fMoisture()
+  # time.sleep(1)
+  # fGuage()
+  # time.sleep(1)
+  fLED()
+
 except KeyboardInterrupt:
     GPIO.cleanup()
