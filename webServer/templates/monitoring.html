@@ -1,51 +1,126 @@
 {% extends "base.html" %}
 
 {% block content %}
-    <div class="monitoring-page">
-        <h2>My Smart Farm Monitoring</h2>
-        <div class="monitoring">
-            <div class="monitoring-item">
-                <h3>Temperature</h3>
-                <button onclick="showDetails('temperature')">View Temperature</button>
-                <div id="temperature-details" class="details" style="display:none;">
-                    <p>Current: 25°C</p>
-                    <img src="url/to/temp-graph.png" alt="Temperature Graph">
-                </div>
-            </div>
-            <div class="monitoring-item">
-                <h3>Humidity</h3>
-                <button onclick="showDetails('humidity')">View Humidity</button>
-                <div id="humidity-details" class="details" style="display:none;">
-                    <p>Current: 60%</p>
-                    <img src="url/to/humidity-graph.png" alt="Humidity Graph">
-                </div>
-            </div>
-            <div class="monitoring-item">
-                <h3>Water</h3>
-                <button onclick="showDetails('water')">View Water</button>
-                <div id="water-details" class="details" style="display:none;">
-                    <button>Water On/Off</button>
-                    <img src="url/to/soil-moisture-graph.png" alt="Soil Moisture Graph">
-                </div>
-            </div>
-            <div class="monitoring-item">
-                <h3>Ventilation</h3>
-                <button onclick="showDetails('ventilation')">View Ventilation</button>
-                <div id="ventilation-details" class="details" style="display:none;">
-                    <button>Vent On/Off</button>
-                </div>
+<div class="monitoring-page">
+<h1 class="page-title">!!!! Smart-Farm-Hanni !!!!</h1>
+<div class="toggle-container" style="margin-bottom: 10px; display: flex; justify-content: flex-end; align-items: center;">
+<span id="automation-mode-all" style="margin-right: 10px; margin-left: auto;">전체 자동화</span>
+<label class="toggle-switch" style="margin-left: 5px;">
+<input type="checkbox" id="automation-toggle-all" onchange="toggleAutomationAll(this)">
+<span class="slider"></span>
+</label>
+</div>
+    <div class="monitoring">
+        <div class="monitoring-item temperature">
+            <div class="inner-box">
+                <h2 class="monitoring-title">기온</h2>
+                <div class="temperature-display box-with-background">24°C</div>
+                <!--<div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="temperature-toggle" onchange="toggleMode(this, 'temperature')">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="temperature-mode">자동화</span>
+                </div>-->
             </div>
         </div>
+        <div class="monitoring-item humidity">
+            <div class="inner-box">
+                <h2 class="monitoring-title">습도</h2>
+                <div class="humidity-display box-with-background">35%</div>
+                <!--<div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="humidity-toggle" onchange="toggleMode(this, 'humidity')">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="humidity-mode">자동화</span>
+                </div>-->
+            </div>
+        </div>
+        <div class="monitoring-item plant-led">
+            <div class="inner-box">
+                <h2 class="monitoring-title">식물 생장 LED</h2>
+                <div class="led-display box-with-background">LED OFF</div>
+                <div id="water-details" class="details" style="display:none;">
+                    <p id="led-status-text" style="display:none; color:green;">LED가 켜졌습니다!!</p>
+                </div>
+                <!--<div class="toggle-container">
+                    <label class="toggle-switch">
+                        <input type="checkbox" id="plant-led-toggle" onchange="toggleMode(this, 'plant-led')">
+                        <span class="slider"></span>
+                    </label>
+                    <span id="plant-led-mode">자동화</span>
+                </div>-->
+            </div>
+        </div>
+        <div class="monitoring-item plant-doctor">
+            <h2 class="monitoring-title">식물 닥터</h2>
+            <div class="inner-box box-with-background-photo">
+                <div class="image-container">
+                    <img src="url/to/image1.png" alt="Image 1">
+                    <img src="url/to/image2.png" alt="Image 2">
+                </div>
+            </div>
+            <!--<div class="toggle-container">
+                <label class="toggle-switch">
+                    <input type="checkbox" id="plant-doctor-toggle" onchange="toggleMode(this, 'plant-doctor')">
+                    <span class="slider"></span>
+                </label>
+                <span id="plant-doctor-mode">자동화</span>
+            </div>-->
+        </div>
     </div>
+</div>
 {% endblock %}
 
 <script>
-function showDetails(id) {
-    var details = document.getElementById(id + '-details');
-    if (details.style.display === 'none') {
-        details.style.display = 'block';
-    } else {
-        details.style.display = 'none';
+    function toggleLED() {
+        var ledStateText = document.getElementById('led-state-text');
+        var ledStatusText = document.getElementById('led-status-text');
+
+        if (ledStateText.textContent === 'LED OFF') {
+            ledStateText.textContent = 'LED ON';  // LED 상태 텍스트 변경
+            ledStatusText.style.display = 'block';  // LED 상태 텍스트 보이기
+        } else {
+            ledStateText.textContent = 'LED OFF';  // LED 상태 텍스트 변경
+            ledStatusText.style.display = 'none';  // LED 상태 텍스트 숨기기
+        }
     }
-}
+
+    function toggleMode(toggle, type) {
+        var modeText = document.getElementById(type + '-mode');
+        if (toggle.checked) {
+            modeText.textContent = '수동화';
+        } else {
+            modeText.textContent = '자동화';
+        }
+    }
+
+    function toggleAutomationAll(toggle) {
+        var automationModeAll = document.getElementById('automation-mode-all');
+        var temperatureToggle = document.getElementById('temperature-toggle');
+        var humidityToggle = document.getElementById('humidity-toggle');
+        var plantLedToggle = document.getElementById('plant-led-toggle');
+        var plantDoctorToggle = document.getElementById('plant-doctor-toggle');
+
+        if (toggle.checked) {
+            automationModeAll.textContent = '전체 수동화';
+            temperatureToggle.checked = false;
+            humidityToggle.checked = false;
+            plantLedToggle.checked = false;
+            plantDoctorToggle.checked = false;
+        } else {
+            automationModeAll.textContent = '전체 자동화';
+            temperatureToggle.checked = true;
+            humidityToggle.checked = true;
+            plantLedToggle.checked = true;
+            plantDoctorToggle.checked = true;
+        }
+        
+        toggleMode(temperatureToggle, 'temperature');
+        toggleMode(humidityToggle, 'humidity');
+        toggleMode(plantLedToggle, 'plant-led');
+        toggleMode(plantDoctorToggle, 'plant-doctor');
+    }
 </script>
+<link rel="stylesheet" href="styles.css">

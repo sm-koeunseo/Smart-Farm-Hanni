@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for
 from werkzeug.utils import secure_filename
-import RPi.GPIO as GPIO
+#import RPi.GPIO as GPIO
 import threading
 import time
 import atexit
@@ -10,15 +10,15 @@ app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = 'uploads/'
 app.config['MAX_CONTENT_LENGTH'] = 16 * 1024 * 1024  # 최대 파일 크기 설정 (16MB)
 
-def cleanup():
+'''def cleanup():
     GPIO.cleanup()
 
-atexit.register(cleanup)
+atexit.register(cleanup)'''
 
 # 홈 페이지 라우트
 @app.route('/')
 def home():
-    return render_template('home.html')
+    return redirect(url_for('monitoring'))
 
 # 마이 페이지 라우트
 @app.route('/mypage')
@@ -63,7 +63,7 @@ def log():
 
     return render_template('log.html')
 
-@app.route('/setting')
+'''@app.route('/setting')
 def setting():
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(17,GPIO.OUT)
@@ -99,7 +99,7 @@ def set_flag():
 def unset():
     flag.clear()
     print("Background task stopped!")
-    return render_template('home.html')
+    return render_template('home.html')'''
 
 if __name__ == '__main__':
     app.debug = True
