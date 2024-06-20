@@ -17,7 +17,7 @@ atexit.register(cleanup)
 
 # 홈 페이지 라우트
 @app.route('/')
-def main():
+def home():
     return render_template('home.html')
 
 # 마이 페이지 라우트
@@ -78,6 +78,28 @@ def ligthOn():
 def ligthOff():
     GPIO.output(17,False)
     return "Lingt Off!"
+
+flag = threading.Event()
+def background_task():
+    while flag.is_set():
+        print("repeat!")
+        time.sleep(2)
+
+
+@app.route('/set')
+def set_flag():
+    if not flag.is_set():
+        flag.set()
+        thread = threading.Thread(target=background_task)
+        print("Background task started!")
+        thread.start()
+    return render_template('home.html')
+
+@app.route('/unset')
+def unset():
+    flag.clear()
+    print("Background task stopped!")
+    return render_template('home.html')
 
 if __name__ == '__main__':
     app.debug = True
