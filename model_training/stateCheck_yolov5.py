@@ -4,6 +4,7 @@ from datetime import datetime
 import subprocess
 import pytz
 import torch
+import cv2
 
 def capture_image(output_dir):
     kst = pytz.timezone('Asia/Seoul')
@@ -28,15 +29,22 @@ def capture_image(output_dir):
         return None
 
 def detect_objects(image_path, model, output_dir):
-    # �̹��� �ε�
     img = cv2.imread(image_path)
     
-    # ��ü ���� ����
     results = model(img)
     
-    # ���� ��� ����
     save_path = os.path.join(output_dir, os.path.basename(image_path))
-    results.save(save_path)
+    
+    # Detection
+    for _, det in enumerate(results.xyxy[0]):
+        if det is not None:
+            xmin, ymin, xmax, ymax, conf, cls = det.tolist()
+            label = model.names[int(cls)]
+            cv2.rectangle(img, (int(xmin), int(ymin)), (int(xmax), int(ymax)), (0, 255, 0), 2)
+            cv2.putText(img, f"{label} {conf:.2f}", (int(xmin), int(ymin) - 10),
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.9, (0, 255, 0), 2)
+    
+    cv2.imwrite(save_path, img)
     
     print(f"Object detection completed. Results saved in: {save_path}")
 
