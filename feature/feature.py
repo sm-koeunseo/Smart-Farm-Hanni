@@ -5,7 +5,7 @@ import statistics
 
 # pin number
 motorA1R = 17
-motorA1B = 18
+motorA1B = 27
 motorA2R = 22
 motorA2B = 23
 
@@ -21,7 +21,7 @@ pump2B = 19
 
 guage = 26
 
-outlet = 25
+outlet = 18
 
 # GPIO Settings
 GPIO.setwarnings(False)
@@ -67,7 +67,7 @@ def fMotor():
   GPIO.output(pump1B, GPIO.LOW)
   GPIO.output(pump2R, GPIO.HIGH)
   GPIO.output(pump2B, GPIO.LOW)
-  time.sleep(1)
+  time.sleep(10)
   GPIO.output(pump1R, GPIO.LOW)
   GPIO.output(pump1B, GPIO.LOW)
   GPIO.output(pump2R, GPIO.LOW)
@@ -88,12 +88,12 @@ def fLED():
   GPIO.output(outlet,False)
 
 try:
-  # fMotor()
-  # time.sleep(1)
-  # fMoisture()
-  # time.sleep(1)
-  # fGuage()
-  # time.sleep(1)
+  fMotor()
+  time.sleep(1)
+  fMoisture()
+  time.sleep(1)
+  fGuage()
+  time.sleep(1)
   fLED()
 
 except KeyboardInterrupt:
