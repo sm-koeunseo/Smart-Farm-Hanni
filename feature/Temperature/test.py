@@ -3,14 +3,15 @@ import time
 import random
 
 # Define motor pins
-MOTER_A_A1 = 5
-MOTER_A_B1 = 6
-MOTER_B_A1 = 20
-MOTER_B_B1 = 21
-MOTER_C_A1 = 13  # New motor C
-MOTER_C_B1 = 19  # New motor C
-MOTER_D_A1 = 16  # New motor D
-MOTER_D_B1 = 26  # New motor D
+MOTER_A_A1 = 17
+MOTER_A_B1 = 27
+MOTER_B_A1 = 22
+MOTER_B_B1 = 23
+
+MOTER_C_A1 = 12  # New motor C
+MOTER_C_B1 = 16  # New motor C
+MOTER_D_A1 = 20  # New motor D
+MOTER_D_B1 = 21  # New motor D
 
 # Setup GPIO mode and pins
 GPIO.setmode(GPIO.BCM)
